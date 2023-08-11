@@ -1,6 +1,7 @@
 name: URL1
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 * * * *'
 
@@ -18,7 +19,7 @@ jobs:
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
-        repository: <username>/pwc
+        repository: donnanszex7654/pwc
         token: ${{ secrets.privates }}
         path: ../pwc
 
