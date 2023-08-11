@@ -52,14 +52,16 @@ jobs:
         cd actions
         ls -al 
         ls -al ../pwc
-        cp pwc/Clash.yml ./Clash.yml
+        cp ../pwc/Clash.yml ./Clash.yml
 
-    - name: Remove pwc directory
-
-      run: rm -rf pwc
+    # - name: Remove pwc directory
+    #   run: rm -rf pwc
 
     - name: Commit and push
       run: |
+        cd actions
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
         git add .
         git commit -m "$(date '+%Y.%m.%d %H:%M:%S') update"
         git push origin main
