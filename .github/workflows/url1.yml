@@ -32,6 +32,8 @@ jobs:
       run: |
         cd pwc
         git add .
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
         git commit -m "$(date '+%Y.%m.%d %H:%M:%S') update"
         git push origin master
 
