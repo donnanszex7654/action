@@ -5,70 +5,65 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: AF 1_node, server: 121.127.46.147, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
-  - {name: AL 1_node, server: 31.171.153.181, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
   - {name: AU 1_node, server: 139.99.245.164, port: 49921, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: CA 1_node, server: www.dongtaiwang4.com, port: 30022, type: ss, cipher: aes-256-gcm, password: dongtaiwang.com, udp: true}
-  - {name: CA 2_node, server: dongtaiwang2.com, port: 443, type: vmess, uuid: 25a9f3b9-1e6d-40bd-968b-e0818c1b196f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dongtaiwang.com, headers: {Host: 2.freek1.xyz}}, udp: true}
-  - {name: CN 1_node, server: 198.2.197.77, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1691489542385, headers: {Host: www.71825152.xyz}}, udp: true}
-  - {name: CN 2_node, server: cdn.node.user-sub.pddns-usersdk.com, port: 13003, type: vmess, uuid: 5f9f4df4-5398-35d1-9a6a-44a8a575832d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /ef483582-6269-468c-93af-c511eccb8a69, headers: {Host: cdn.node.user-sub.pddns-usersdk.com}}, udp: true}
-  - {name: IR 1_node, server: 185.135.86.173, port: 9027, type: ss, cipher: aes-256-cfb, password: EXN3S3eQpjE7EJu8, udp: true}
-  - {name: IR 2_node, server: 185.135.86.173, port: 9043, type: ss, cipher: aes-256-cfb, password: HSZuyJQcWe8dxNdF, udp: true}
-  - {name: IR 3_node, server: 185.135.86.173, port: 9042, type: ss, cipher: aes-256-cfb, password: S7KwUu7yBy58S3Ga, udp: true}
-  - {name: IR 4_node, server: 185.135.86.173, port: 9025, type: ss, cipher: aes-256-cfb, password: XPtzA9sCug3SPR4c, udp: true}
-  - {name: IR 5_node, server: 185.135.86.173, port: 9019, type: ss, cipher: aes-256-cfb, password: GA9KzeEgvfxNrgmM, udp: true}
-  - {name: IR 6_node, server: 185.135.86.173, port: 9041, type: ss, cipher: aes-256-cfb, password: U6qnYRhfyDmn8sgn, udp: true}
-  - {name: IR 7_node, server: 185.135.86.173, port: 9029, type: ss, cipher: aes-256-cfb, password: dU3DSNS8wYPXzEKw, udp: true}
-  - {name: IR 8_node, server: 185.135.86.173, port: 9040, type: ss, cipher: aes-256-cfb, password: p9z5BVADH2YFs3MN, udp: true}
-  - {name: KR 1_node, server: 221.150.109.5, port: 9555, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@, udp: true}
-  - {name: KR 2_node, server: 125.141.26.3, port: 2003, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@, udp: true}
-  - {name: RO 1_node, server: 185.47.255.219, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
-  - {name: SG 1_node, server: 3.0.182.218, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: SG 2_node, server: 54.255.112.174, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: SG 3_node, server: sg-am3.eqsunshine.com, port: 32001, type: ssr, cipher: aes-256-cfb, password: 3g0dHlKME, protocol: origin, obfs: tls1.2_ticket_auth, protocol-param: "", obfs-param: "", udp: true}
-  - {name: US 1_node, server: 23.224.202.86, port: 57702, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 2_node, server: 45.199.138.185, port: 44144, type: vmess, uuid: 078eb24d-8d1d-4fbd-b914-ee58a897a35e, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 3_node, server: 198.2.202.215, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1691403540577, headers: {Host: www.13364896.xyz}}, udp: true}
-  - {name: US 4_node, server: 37.218.241.130, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: j4wkIrreHEdC, udp: true}
-  - {name: US 5_node, server: hzefss.66666654.xyz, port: 2095, type: vmess, uuid: 0bb55212-6c02-39d5-8189-e6c5a9f825be, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /hgcefomn, headers: {Host: hzefs.66666654.xyz}}, udp: true}
-  - {name: US 6_node, server: 45.199.138.164, port: 49301, type: vmess, uuid: 65ea6727-4461-47a7-a5c4-fef2c67f2f79, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 7_node, server: 198.2.204.245, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1691489542385, headers: {Host: www.11141292.xyz}}, udp: true}
-  - {name: US 8_node, server: 54.212.14.137, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: US 9_node, server: 45.199.138.74, port: 30917, type: vmess, uuid: 6fa560d4-35c5-4968-adfc-812c52878b84, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 10_node, server: 23.224.202.86, port: 57702, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 11_node, server: 142.0.132.35, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1691489542385, headers: {Host: www.45022499.xyz}}, udp: true}
-  - {name: US 12_node, server: 45.199.138.185, port: 44144, type: vmess, uuid: 078eb24d-8d1d-4fbd-b914-ee58a897a35e, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 13_node, server: 142.4.109.6, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/252617081903, headers: {Host: www.29253744.xyz}}, udp: true}
-  - {name: US 14_node, server: 23.108.100.103, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /footers, headers: {Host: www.40587333.xyz}}, udp: true}
-  - {name: US 15_node, server: 192.74.229.34, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1691489542385, headers: {Host: www.19458162.xyz}}, udp: true}
-  - {name: US 16_node, server: 45.199.138.92, port: 49232, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca4690dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 17_node, server: 45.199.138.92, port: 49232, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca4690dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 18_node, server: 142.0.131.56, port: 443, type: vmess, uuid: 2a23dbd5-09cf-4aa8-a835-3230728c4973, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/252617081903, headers: {Host: www.68757543.xyz}}, udp: true}
-  - {name: US 19_node, server: 45.199.138.136, port: 49169, type: vmess, uuid: 743bdc87-1dea-41bf-aa0b-51dfbbfec8aa, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 20_node, server: 45.199.138.158, port: 49183, type: vmess, uuid: f5250c4e-f855-4eff-b73c-a02226d42fe7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 21_node, server: 45.199.138.192, port: 55015, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 22_node, server: 45.199.138.192, port: 55015, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 23_node, server: 45.199.138.164, port: 49301, type: vmess, uuid: 65ea6727-4461-47a7-a5c4-fef2c67f2f79, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 24_node, server: 45.199.138.169, port: 38175, type: vmess, uuid: 6e79eea4-5f72-4683-ad0e-5339f013421b, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 25_node, server: 45.199.138.74, port: 30917, type: vmess, uuid: 6fa560d4-35c5-4968-adfc-812c52878b84, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 26_node, server: 45.199.138.149, port: 47922, type: vmess, uuid: f9fa3a9c-f7d5-414f-88e6-6970585d9949, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 27_node, server: 45.199.138.134, port: 44393, type: vmess, uuid: 1d474f0b-e78d-4af9-bc4a-a467467bc7a7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: ZA 1_node, server: 156.225.67.89, port: 48339, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: ZA 2_node, server: 156.225.67.58, port: 443, type: vmess, uuid: 9c026efe-6af0-465f-b8c0-3f58c8c2d4c5, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1691489542385, headers: {Host: www.84661158.xyz}}, udp: true}
-  - {name: ZA 3_node, server: 156.225.67.89, port: 48339, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: CN 1_node, server: 07.kccic2pa.xyz, port: 50007, type: vmess, uuid: 5e419001-aaf0-4975-a931-fc7fc9459718, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: CN 2_node, server: 21.kccic2pa.xyz, port: 50021, type: vmess, uuid: 5e419001-aaf0-4975-a931-fc7fc9459718, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: CN 3_node, server: 223.95.40.85, port: 2008, type: ss, cipher: aes-128-gcm, password: a-wym4ovY4Yw, udp: true}
+  - {name: DE 1_node, server: 89.163.157.4, port: 1443, type: ss, cipher: chacha20-ietf-poly1305, password: NGJjN, udp: true}
+  - {name: HK 1_node, server: 156.245.8.240, port: 45326, type: vmess, uuid: 29a5d48e-24f1-48fd-a5e1-9a46cb31032f, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: HK 2_node, server: 156.245.8.240, port: 45326, type: vmess, uuid: 29a5d48e-24f1-48fd-a5e1-9a46cb31032f, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: HK 3_node, server: 156.245.8.240, port: 45326, type: vmess, uuid: 29a5d48e-24f1-48fd-a5e1-9a46cb31032f, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: IR 1_node, server: 185.135.86.173, port: 9029, type: ss, cipher: aes-256-cfb, password: dU3DSNS8wYPXzEKw, udp: true}
+  - {name: IR 2_node, server: 185.135.86.173, port: 9041, type: ss, cipher: aes-256-cfb, password: U6qnYRhfyDmn8sgn, udp: true}
+  - {name: IR 3_node, server: 185.135.86.173, port: 9043, type: ss, cipher: aes-256-cfb, password: HSZuyJQcWe8dxNdF, udp: true}
+  - {name: IR 4_node, server: 185.135.86.173, port: 9042, type: ss, cipher: aes-256-cfb, password: S7KwUu7yBy58S3Ga, udp: true}
+  - {name: IR 5_node, server: 185.135.86.173, port: 9040, type: ss, cipher: aes-256-cfb, password: p9z5BVADH2YFs3MN, udp: true}
+  - {name: IR 6_node, server: 185.135.86.173, port: 9025, type: ss, cipher: aes-256-cfb, password: XPtzA9sCug3SPR4c, udp: true}
+  - {name: IR 7_node, server: 185.135.86.173, port: 9000, type: ss, cipher: aes-256-cfb, password: a3GFYt36Sm82Vys9, udp: true}
+  - {name: IS 1_node, server: 37.235.49.152, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
+  - {name: JP 1_node, server: jp-am48-6.eqnode.net, port: 8081, type: ssr, cipher: aes-256-cfb, password: eAokbaDN6, protocol: origin, obfs: tls1.2_ticket_auth, protocol-param: None, obfs-param: "", udp: true}
+  - {name: JP 2_node, server: 43.201.251.48, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: JP 3_node, server: 43.200.6.21, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: SG 1_node, server: 18.141.236.15, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: SG 2_node, server: 54.254.129.246, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: US 1_node, server: 54.212.14.137, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: US 2_node, server: 45.199.138.158, port: 49183, type: vmess, uuid: f5250c4e-f855-4eff-b73c-a02226d42fe7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 3_node, server: 45.199.138.139, port: 43342, type: vmess, uuid: fe5f69e7-e183-439b-950b-9661ef0651f2, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 4_node, server: vip.impervasec.info, port: 2095, type: vmess, uuid: 4bcd63da-c887-4766-d61f-5d4097796abc, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: vip.impervasec.info}}, udp: true}
+  - {name: US 5_node, server: 45.199.138.139, port: 43342, type: vmess, uuid: fe5f69e7-e183-439b-950b-9661ef0651f2, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 6_node, server: 45.199.138.149, port: 47922, type: vmess, uuid: f9fa3a9c-f7d5-414f-88e6-6970585d9949, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 7_node, server: 34.217.75.169, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: US 8_node, server: wxll.e5outllok.me, port: 80, type: vmess, uuid: de0fbe01-ffbd-40d0-a28c-0e5aed6b554e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: wxll.e5outllok.me}}, udp: true}
+  - {name: US 9_node, server: cfcdn5.sanfencdn.net, port: 80, type: vmess, uuid: bbb8d21c-44f2-4d21-b588-b50de8b7e830, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /zh-cn, headers: {Host: jp4.sanfencdn2.com}}, udp: true}
+  - {name: US 10_node, server: 45.199.138.139, port: 43342, type: vmess, uuid: fe5f69e7-e183-439b-950b-9661ef0651f2, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 11_node, server: de.opencc.eu.org, port: 8080, type: vmess, uuid: 5436474d-13a9-47ef-898a-7101c2921be9, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /h2102, headers: {Host: de.opencc.eu.org}}, udp: true}
+  - {name: US 12_node, server: 45.199.138.179, port: 40678, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 13_node, server: 45.199.138.149, port: 47922, type: vmess, uuid: f9fa3a9c-f7d5-414f-88e6-6970585d9949, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 14_node, server: 45.199.138.134, port: 44393, type: vmess, uuid: 1d474f0b-e78d-4af9-bc4a-a467467bc7a7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 15_node, server: wxll.e5outllok.me, port: 80, type: vmess, uuid: 1da9d412-beb1-48cf-ac3e-ebc16403447b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: wxll.e5outllok.me}}, udp: true}
+  - {name: US 16_node, server: 199.188.111.52, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/1690866578068, headers: {Host: www.62317155.xyz}}, udp: true}
+  - {name: US 17_node, server: 142.4.109.6, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/252617081903, headers: {Host: www.29253744.xyz}}, udp: true}
+  - {name: US 18_node, server: 140.99.128.99, port: 58402, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 19_node, server: 45.199.138.158, port: 49183, type: vmess, uuid: f5250c4e-f855-4eff-b73c-a02226d42fe7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 20_node, server: 140.99.128.99, port: 58402, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 21_node, server: 45.199.138.134, port: 44393, type: vmess, uuid: 1d474f0b-e78d-4af9-bc4a-a467467bc7a7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 22_node, server: 64.32.21.247, port: 44313, type: vmess, uuid: 57f93e92-ebb9-4f16-9bdc-8225d2010995, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 23_node, server: 64.32.24.211, port: 48659, type: vmess, uuid: cff9d860-7330-4ee1-b072-7142ddf1571d, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: US 24_node, server: 45.199.138.158, port: 49183, type: vmess, uuid: f5250c4e-f855-4eff-b73c-a02226d42fe7, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -76,13 +71,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -107,24 +101,19 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -132,13 +121,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -163,25 +151,20 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -189,13 +172,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -220,12 +202,6 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -244,13 +220,14 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -258,13 +235,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -289,12 +265,6 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -305,13 +275,14 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -319,13 +290,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -350,24 +320,19 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -375,13 +340,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -406,25 +370,20 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -432,13 +391,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -463,12 +421,6 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -484,13 +436,14 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - AF 1_node
-      - AL 1_node
       - AU 1_node
-      - CA 1_node
-      - CA 2_node
       - CN 1_node
       - CN 2_node
+      - CN 3_node
+      - DE 1_node
+      - HK 1_node
+      - HK 2_node
+      - HK 3_node
       - IR 1_node
       - IR 2_node
       - IR 3_node
@@ -498,13 +451,12 @@ proxy-groups:
       - IR 5_node
       - IR 6_node
       - IR 7_node
-      - IR 8_node
-      - KR 1_node
-      - KR 2_node
-      - RO 1_node
+      - IS 1_node
+      - JP 1_node
+      - JP 2_node
+      - JP 3_node
       - SG 1_node
       - SG 2_node
-      - SG 3_node
       - US 1_node
       - US 2_node
       - US 3_node
@@ -529,12 +481,6 @@ proxy-groups:
       - US 22_node
       - US 23_node
       - US 24_node
-      - US 25_node
-      - US 26_node
-      - US 27_node
-      - ZA 1_node
-      - ZA 2_node
-      - ZA 3_node
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
