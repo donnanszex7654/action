@@ -44,6 +44,8 @@ jobs:
     - name: Checkout this repository
       uses: actions/checkout@v3
       with:
+        repository: donnanszex7654/pwc
+        token: ${{ secrets.privates }}
         path: actions
 
     - name: Copy Clash.yml
