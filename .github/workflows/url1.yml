@@ -21,16 +21,16 @@ jobs:
       with:
         repository: donnanszex7654/pwc
         token: ${{ secrets.privates }}
-        path: ../pwc
+        path: pwc
 
     - name: Change directory and run pipeline.py
       run: |
-        cd ../pwc
+        cd pwc
         python pipeline.py
 
     - name: Commit and push to pwc repository
       run: |
-        cd ../pwc
+        cd pwc
         git add .
         git commit -m "$(date '+%Y.%m.%d %H:%M:%S') update"
         git push origin master
@@ -39,7 +39,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Copy Clash.yml
-      run: cp ../pwc/Clash.yml ./Clash.yml
+      run: cp pwc/Clash.yml ./Clash.yml
+
+    - name: Remove pwc directory
+      run: rm -rf pwc
 
     - name: Commit and push
       run: |
