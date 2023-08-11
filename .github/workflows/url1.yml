@@ -1,0 +1,47 @@
+name: URL1
+
+on:
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Timezone
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+    - name: git config
+      run: git config --local user.name "GitHub Actions"; git config --local user.email "actions@github.com"
+    
+    - name: Checkout private repository
+      uses: actions/checkout@v3
+      with:
+        repository: <username>/pwc
+        token: ${{ secrets.privates }}
+        path: ../pwc
+
+    - name: Change directory and run pipeline.py
+      run: |
+        cd ../pwc
+        python pipeline.py
+
+    - name: Commit and push to pwc repository
+      run: |
+        cd ../pwc
+        git add .
+        git commit -m "$(date '+%Y.%m.%d %H:%M:%S') update"
+        git push origin master
+
+    - name: Checkout this repository
+      uses: actions/checkout@v3
+
+    - name: Copy Clash.yml
+      run: cp ../pwc/Clash.yml ./Clash.yml
+
+    - name: Commit and push
+      run: |
+        git add .
+        git commit -m "$(date '+%Y.%m.%d %H:%M:%S') update"
+        git push origin master
