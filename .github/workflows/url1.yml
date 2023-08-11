@@ -43,10 +43,13 @@ jobs:
 
     - name: Checkout this repository
       uses: actions/checkout@v3
+      with:
+        path: actions
 
     - name: Copy Clash.yml
       run: |
         pwd
+        cd actions
         ls -al 
         ls -al ../pwc
         cp pwc/Clash.yml ./Clash.yml
