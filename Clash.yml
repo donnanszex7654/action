@@ -5,101 +5,91 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: Pmsub_CN 0, server: 120.241.47.131, port: 10005, type: trojan, password: 8f8532c5-03ac-4103-b249-8e71f25de5b4, skip-cert-verify: true, udp: true}
-  - {name: Pmsub_KR 1, server: 43.202.1.252, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Pmsub_KR 10, server: zzzz.meiyiss.club, port: 32703, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 11, server: zzzz.meiyiss.club, port: 32802, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 12, server: zzzz.meiyiss.club, port: 32803, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 13, server: zzzz.meiyiss.club, port: 32302, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 14, server: zzzz.meiyiss.club, port: 32701, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 15, server: zzzz.meiyiss.club, port: 32403, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 16, server: zzzz.meiyiss.club, port: 32602, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 2, server: zzzz.meiyiss.club, port: 32201, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 3, server: zzzz.meiyiss.club, port: 32801, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 4, server: zzzz.meiyiss.club, port: 32702, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 5, server: zzzz.meiyiss.club, port: 32804, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 6, server: zzzz.meiyiss.club, port: 32502, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 7, server: zzzz.meiyiss.club, port: 32303, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 8, server: zzzz.meiyiss.club, port: 32401, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_KR 9, server: zzzz.meiyiss.club, port: 32202, type: ss, cipher: aes-128-gcm, password: 9fb4a200-f2d7-4433-89e3-5bede15d2884, udp: true}
-  - {name: Pmsub_SG 17, server: 13.213.53.160, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Pmsub_US 18, server: 35.92.39.120, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Pmsub_VN 19, server: vn4.4gspeed.me, port: 80, type: vmess, uuid: 13866689-3580-433a-ad98-c787dc30f053, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /4gspeed.me, headers: {Host: vn4.4gspeed.me}}, udp: true}
+  - {name: Pmsub_CN 0, server: 120.241.47.131, port: 10005, type: trojan, password: 659b94ae-874c-497e-840a-1054d79de56c, skip-cert-verify: true, udp: true}
+  - {name: Pmsub_CN 1, server: 120.241.47.131, port: 10005, type: trojan, password: 8f8532c5-03ac-4103-b249-8e71f25de5b4, skip-cert-verify: true, udp: true}
+  - {name: Pmsub_KR 2, server: 43.202.1.252, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Pmsub_US 3, server: 45.55.2.232, port: 14293, type: ss, cipher: aes-256-cfb, password: 2170f8, udp: true}
+  - {name: Pmsub_US 4, server: amsterdam.kotick.site, port: 443, type: vmess, uuid: 9f858ce1-7e02-4863-aa24-d90f8d3437d7, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: speedtest, headers: {Host: amsterdam.kotick.site}}, udp: true}
+  - {name: Pmsub_US 5, server: www.dongtaiwang4.com, port: 30033, type: ss, cipher: aes-256-gcm, password: dongtaiwang.com, udp: true}
+  - {name: Pmsub_US 6, server: 208.115.233.87, port: 30033, type: ss, cipher: aes-256-gcm, password: dongtaiwang.com, udp: true}
+  - {name: Pmsub_US 7, server: 129.146.247.135, port: 42598, type: vmess, uuid: 1773b226-0bdb-43c5-87d8-270d26211dda, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Pmsub_VN 8, server: vn4.4gspeed.me, port: 80, type: vmess, uuid: 13866689-3580-433a-ad98-c787dc30f053, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /4gspeed.me, headers: {Host: vn4.4gspeed.me}}, udp: true}
+  - {name: Pmsub_VN 9, server: vn5.4gspeed.me, port: 443, type: vmess, uuid: 13866689-3580-433a-ad98-c787dc30f053, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /4gspeed.me, headers: {Host: vn5.4gspeed.me}}, udp: true}
   - {name: SCP_UKN 0, server: 127.0.0.1, port: 443, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: SCP_US 1, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: dp4.ilovescp.com}}, udp: true}
-  - {name: SCP_US 10, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: dp3.scproxy.top}}, udp: true}
-  - {name: SCP_US 11, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv2.scproxy.top}}, udp: true}
-  - {name: SCP_US 12, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl.sharecentrepro.com}}, udp: true}
-  - {name: SCP_US 13, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv3.sharecentrepro.org}}, udp: true}
-  - {name: SCP_US 14, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv2.sharecentrepro.org}}, udp: true}
-  - {name: SCP_US 2, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl2.sharecentrepro.com}}, udp: true}
-  - {name: SCP_US 3, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: ca.ilovescp.com}}, udp: true}
-  - {name: SCP_US 4, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv1.sharecentrepro.org}}, udp: true}
-  - {name: SCP_US 5, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: uk2.scproxy.top}}, udp: true}
-  - {name: SCP_US 6, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: hk.ilovescp.com}}, udp: true}
-  - {name: SCP_US 7, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl3.sharecentrepro.org}}, udp: true}
-  - {name: SCP_US 8, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: dp1.scproxy.top}}, udp: true}
-  - {name: SCP_US 9, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: fr.ilovescp.com}}, udp: true}
+  - {name: SCP_US 1, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: dp1.scproxy.top}}, udp: true}
+  - {name: SCP_US 10, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv2.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 11, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: dp3.scproxy.top}}, udp: true}
+  - {name: SCP_US 12, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv2.scproxy.top}}, udp: true}
+  - {name: SCP_US 13, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl2.sharecentrepro.com}}, udp: true}
+  - {name: SCP_US 14, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv1.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 2, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv3.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 3, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: uk2.scproxy.top}}, udp: true}
+  - {name: SCP_US 4, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: hk.ilovescp.com}}, udp: true}
+  - {name: SCP_US 5, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: dp4.ilovescp.com}}, udp: true}
+  - {name: SCP_US 6, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl.sharecentrepro.com}}, udp: true}
+  - {name: SCP_US 7, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: fr.ilovescp.com}}, udp: true}
+  - {name: SCP_US 8, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: ca.ilovescp.com}}, udp: true}
+  - {name: SCP_US 9, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl3.sharecentrepro.org}}, udp: true}
   - {name: Speed_BG 0, server: 89.44.197.156, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
-  - {name: Speed_CN 1, server: zjxc.pmxu.link, port: 44361, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
-  - {name: Speed_CN 10, server: 36.137.19.45, port: 55101, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
-  - {name: Speed_CN 11, server: shct.pmxu.link, port: 21399, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
-  - {name: Speed_CN 12, server: 36.137.19.45, port: 55104, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
-  - {name: Speed_CN 13, server: zjxc.pmxu.link, port: 42862, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
-  - {name: Speed_CN 14, server: us3.fxzbjs.xyz, port: 15011, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
-  - {name: Speed_CN 15, server: 36.137.19.45, port: 55109, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
-  - {name: Speed_CN 16, server: jp1.fxzbjs.xyz, port: 15002, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
-  - {name: Speed_CN 17, server: 36.137.19.45, port: 55103, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
-  - {name: Speed_CN 2, server: 36.137.19.45, port: 55105, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
-  - {name: Speed_CN 3, server: sg4.fxzbjs.xyz, port: 15020, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
-  - {name: Speed_CN 4, server: foshan.chiguayun.cc, port: 27137, type: ss, cipher: chacha20-ietf-poly1305, password: 9ac88df2-8cac-4420-94a6-fdd2d41d0109, udp: true}
-  - {name: Speed_CN 5, server: free.node.kk-proxy.pro, port: 24962, type: ss, cipher: chacha20-ietf-poly1305, password: b259dba8-4244-4576-a95e-decb84afda1d, udp: true}
-  - {name: Speed_CN 6, server: jp2.fxzbjs.xyz, port: 15023, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
-  - {name: Speed_CN 7, server: 36.137.19.45, port: 55102, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
+  - {name: Speed_CN 1, server: shct.pmxu.link, port: 21399, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
+  - {name: Speed_CN 10, server: 36.137.19.45, port: 55105, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
+  - {name: Speed_CN 11, server: foshan.chiguayun.cc, port: 27137, type: ss, cipher: chacha20-ietf-poly1305, password: 9ac88df2-8cac-4420-94a6-fdd2d41d0109, udp: true}
+  - {name: Speed_CN 12, server: shct.pmxu.link, port: 25427, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
+  - {name: Speed_CN 13, server: 36.137.19.45, port: 55107, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
+  - {name: Speed_CN 14, server: sg4.fxzbjs.xyz, port: 15020, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
+  - {name: Speed_CN 15, server: shct.pmxu.link, port: 22177, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
+  - {name: Speed_CN 16, server: 36.137.19.45, port: 55110, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
+  - {name: Speed_CN 17, server: jp2.fxzbjs.xyz, port: 15023, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
+  - {name: Speed_CN 2, server: jp1.fxzbjs.xyz, port: 15002, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
+  - {name: Speed_CN 3, server: 36.137.19.45, port: 55109, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
+  - {name: Speed_CN 4, server: zjxc.pmxu.link, port: 42862, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
+  - {name: Speed_CN 5, server: 183.233.187.232, port: 51165, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Speed_CN 6, server: 36.137.19.45, port: 55102, type: ss, cipher: aes-128-gcm, password: edfcc7a5-a469-4e4a-9520-84b8f9a31bbe, udp: true}
+  - {name: Speed_CN 7, server: shct.pmxu.link, port: 55906, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
   - {name: Speed_CN 8, server: jp4.fxzbjs.xyz, port: 15010, type: ss, cipher: chacha20-ietf-poly1305, password: e698fbda-78cc-4daf-926c-3f2742974683, udp: true}
-  - {name: Speed_CN 9, server: shct.pmxu.link, port: 25427, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
+  - {name: Speed_CN 9, server: zjxc.pmxu.link, port: 44361, type: ss, cipher: aes-256-gcm, password: YX3wgYWMpLKYEnho, udp: true}
   - {name: Speed_DE 18, server: 64.226.76.46, port: 22873, type: ss, cipher: aes-256-gcm, password: pfx5jZoIYFEwR9G2zoqF+jzUNlBh5qQkBfN+iyQ0JPM=, udp: true}
   - {name: Speed_FR 19, server: fr-am1-5.eqsunshine.com, port: 8181, type: ssr, cipher: aes-256-cfb, password: RcfVcDzzB, protocol: origin, obfs: tls1.2_ticket_auth, protocol-param: Tm9uJSU%3D, obfs-param: "", udp: true}
-  - {name: Speed_IT 20, server: 5.188.226.187, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
-  - {name: Speed_JP 21, server: jp6.lianpi.xyz, port: 23234, type: vmess, uuid: 1f3d67b4-6929-4598-90ca-84a841bf02e4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: Speed_JP 22, server: 18.183.132.14, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Speed_JP 23, server: 172.105.234.75, port: 10443, type: vmess, uuid: a82e7a29-8cc8-45fa-bb3c-2f321f9e2cd5, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: Speed_SE 24, server: 121.127.46.147, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
-  - {name: Speed_SG 25, server: sg-am3.eqsunshine.com, port: 32001, type: ssr, cipher: aes-256-cfb, password: 3g0dHlKME, protocol: origin, obfs: tls1.2_ticket_auth, protocol-param: "", obfs-param: "", udp: true}
-  - {name: Speed_US 26, server: 172.64.202.22, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: ca.ilovescp.com}}, udp: true}
-  - {name: Speed_US 27, server: lt1.992688.xyz, port: 8880, type: vmess, uuid: 67a341a7-5ae7-4d92-edad-9e8db87ce165, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: vcus1.vpn66.eu.org}}, udp: true}
-  - {name: Speed_US 28, server: 104.168.13.80, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: Epl46de5ryftug88ePd, udp: true}
-  - {name: Speed_US 29, server: yd1.992688.xyz, port: 8880, type: vmess, uuid: 67a341a7-5ae7-4d92-edad-9e8db87ce165, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: vcus1.vpn66.eu.org}}, udp: true}
-  - {name: TELE_CA 0, server: 23.227.38.82, port: 443, type: vmess, uuid: 6deddb7f-e557-42db-bfa0-cf40b36b27e2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dongtaiwang.com, headers: {Host: d.freeh1.xyz}}, udp: true}
-  - {name: TELE_JP 1, server: jp5.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
-  - {name: TELE_JP 2, server: jp4.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
-  - {name: TELE_JP 3, server: jp6.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
-  - {name: TELE_KR 4, server: 146.56.132.247, port: 443, type: vmess, uuid: 6deddb7f-e557-42db-bfa0-cf40b36b27e2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dongtaiwang.com, headers: {Host: d.freeh1.xyz}}, udp: true}
-  - {name: TELE_RU 5, server: 92.53.86.220, port: 51348, type: ss, cipher: chacha20-ietf-poly1305, password: Y26aH7Xfgd5f0xXKA, udp: true}
-  - {name: TELE_SG 6, server: 5.34.177.82, port: 80, type: ss, cipher: chacha20-ietf-poly1305, password: 9eMQ1yPowwygotq0VUv4qs, udp: true}
-  - {name: TELE_SG 7, server: sg4.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: Speed_IM 20, server: 192.71.211.161, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
+  - {name: Speed_IT 21, server: 5.188.226.187, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
+  - {name: Speed_JP 22, server: 172.105.234.75, port: 10443, type: vmess, uuid: a82e7a29-8cc8-45fa-bb3c-2f321f9e2cd5, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Speed_JP 23, server: 18.183.132.14, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_JP 24, server: jp6.lianpi.xyz, port: 23234, type: vmess, uuid: 1f3d67b4-6929-4598-90ca-84a841bf02e4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Speed_SE 25, server: 121.127.46.147, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
+  - {name: Speed_US 26, server: 37.9.35.46, port: 51348, type: ss, cipher: chacha20-ietf-poly1305, password: 3X5vJRL67HGCVmnzgubQk, udp: true}
+  - {name: Speed_US 27, server: yd1.992688.xyz, port: 8880, type: vmess, uuid: 67a341a7-5ae7-4d92-edad-9e8db87ce165, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: vcus1.vpn66.eu.org}}, udp: true}
+  - {name: Speed_US 28, server: yd1.992688.xyz, port: 8880, type: vmess, uuid: 782e0824-df3e-4c32-de48-beb41c0dadcf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: euserv2.vpn66.eu.org}}, udp: true}
+  - {name: Speed_US 29, server: dx1.992688.xyz, port: 8880, type: vmess, uuid: 67a341a7-5ae7-4d92-edad-9e8db87ce165, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: vcus1.vpn66.eu.org}}, udp: true}
+  - {name: TELE_CA 0, server: 23.227.39.82, port: 443, type: vmess, uuid: 6deddb7f-e557-42db-bfa0-cf40b36b27e2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dongtaiwang.com, headers: {Host: d.freeh1.xyz}}, udp: true}
+  - {name: TELE_CA 1, server: 23.227.39.109, port: 443, type: vmess, uuid: 87a95522-985c-4a17-afea-9b7d7208bce5, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dongtaiwang.com, headers: {Host: 3.freek1.xyz}}, udp: true}
+  - {name: TELE_FI 2, server: 109.107.171.203, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: 65+1iTSn/EqTDnEKwzfhWc7OVIjXWVUv, udp: true}
+  - {name: TELE_IL 3, server: 77.91.69.236, port: 51348, type: ss, cipher: chacha20-ietf-poly1305, password: bhldXbB67HGqwR120AW5ZP, udp: true}
+  - {name: TELE_JP 4, server: jp3.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: TELE_KR 5, server: 146.56.132.247, port: 443, type: vmess, uuid: 6deddb7f-e557-42db-bfa0-cf40b36b27e2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dongtaiwang.com, headers: {Host: d.freeh1.xyz}}, udp: true}
+  - {name: TELE_NL 6, server: 188.114.99.0, port: 8443, type: vmess, uuid: aa0c4744-9568-4bee-a08b-73668a9b2a42, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /cloudconebbb, headers: {Host: cloudconebbb.gorgorchicken.one}}, udp: true}
+  - {name: TELE_RU 7, server: 92.53.86.220, port: 51348, type: ss, cipher: chacha20-ietf-poly1305, password: Y26aH7Xfgd5f0xXKA, udp: true}
+  - {name: TELE_SG 10, server: sg2.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
   - {name: TELE_SG 8, server: 18.143.75.80, port: 443, type: vmess, uuid: 405c4c45-df2a-4adf-b8e6-13f0de358e3a, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: 18.143.75.80}}, udp: true}
-  - {name: TELE_SG 9, server: si4co.09vpn.com, port: 80, type: vmess, uuid: 034f7e88-561a-4fb9-b917-4ab3343b6755, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /vmess/, headers: {Host: si4co.09vpn.com}}, udp: true}
-  - {name: TELE_US 10, server: 107.167.16.202, port: 443, type: vmess, uuid: 8c679b81-84fc-43ce-9553-ddca575a6949, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/080822272914, headers: {Host: www.87135530.xyz}}, udp: true}
-  - {name: TELE_US 11, server: 1496join.outline-vpn.cloud, port: 44945, type: vmess, uuid: 268a491b-764c-44d1-81a4-30de16130867, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 12, server: 64.32.24.222, port: 443, type: vmess, uuid: cff9d860-7330-4ee1-b072-7142ddf1571d, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/080822272914, headers: {Host: www.82615355.xyz}}, udp: true}
-  - {name: TELE_US 13, server: 108.166.203.181, port: 44945, type: vmess, uuid: 268a491b-764c-44d1-81a4-30de16130867, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 14, server: 108.166.203.183, port: 44945, type: vmess, uuid: 268a491b-764c-44d1-81a4-30de16130867, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 15, server: Tokyo.mfa.ee, port: 2052, type: vmess, uuid: 992889a7-296e-4a44-98c2-0eb89af4411d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: vnpt.iiio.wiki}}, udp: true}
-  - {name: TELE_US 16, server: 108.181.24.41, port: 443, type: trojan, password: a30ba00c-802e-4a2d-bb93-aa15adaebc6d, sni: 20-212-60-88.nhost.00cdn.com, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 17, server: 107.167.16.34, port: 45592, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 18, server: 142.4.126.25, port: 51715, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 19, server: cloudflare.piaole.me, port: 443, type: vmess, uuid: 589612ae-ede2-494a-a0d4-6e4293040088, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /huawei, headers: {Host: cloudflare.piaole.me}}, udp: true}
-  - {name: TELE_US 20, server: 38.143.66.112, port: 9102, type: ss, cipher: aes-256-gcm, password: e4FCWrgpkji3QY, udp: true}
-  - {name: TELE_US 21, server: 137.175.22.187, port: 53999, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 22, server: wi.saintink.eu.org, port: 443, type: vmess, uuid: 927094d3-d678-4763-8591-e240d0bcae87, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /vuk2.0bad.com/chat, headers: {Host: sub2.saintink.eu.org}}, udp: true}
-  - {name: TELE_US 23, server: 167.88.63.107, port: 2376, type: ss, cipher: aes-256-gcm, password: faBAoD54k87UJG7, udp: true}
-  - {name: TELE_US 24, server: Tokyo.mfa.ee, port: 2052, type: vmess, uuid: 992889a7-296e-4a44-98c2-0eb89af4411d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: vnpt.iiio.wiki}}, udp: true}
-  - {name: TELE_US 25, server: 23.108.100.101, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /footers, headers: {Host: www.40587333.xyz}}, udp: true}
-  - {name: TELE_US 26, server: 23.224.11.146, port: 41009, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_US 27, server: octavi.cfd, port: 443, type: vmess, uuid: 03fcc618-b93d-6796-6aed-8a38c975d581, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: linkvws, headers: {Host: octavi.cfd}}, udp: true}
-  - {name: TELE_US 28, server: fd.shabijichang.com, port: 80, type: vmess, uuid: 81fc114e-44d7-44c7-9912-942453b03154, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: flkf3.shabijichang.com}}, udp: true}
-  - {name: TELE_US 29, server: 172.67.184.53, port: 8443, type: vmess, uuid: aa0c4744-9568-4bee-a08b-73668a9b2a42, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /cloudconebbb, headers: {Host: cloudconebbb.gorgorchicken.one}}, udp: true}
+  - {name: TELE_SG 9, server: 5.34.177.82, port: 80, type: ss, cipher: chacha20-ietf-poly1305, password: 9eMQ1yPowwygotq0VUv4qs, udp: true}
+  - {name: TELE_US 11, server: ns1.v2-vip.fun, port: 8880, type: vmess, uuid: 617c9bc4-4116-41c6-99e0-ace49a38fcdb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /Jnv8ViZOUVgijjOh0p5uGjHnXIiY, headers: {Host: fr7.tehme100.fun}}, udp: true}
+  - {name: TELE_US 12, server: lt1.992688.xyz, port: 8880, type: vmess, uuid: 782e0824-df3e-4c32-de48-beb41c0dadcf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: euserv2.vpn66.eu.org}}, udp: true}
+  - {name: TELE_US 13, server: 23.108.100.103, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /footers, headers: {Host: www.40587333.xyz}}, udp: true}
+  - {name: TELE_US 14, server: 137.175.22.187, port: 53999, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 15, server: cloudflare.piaole.me, port: 443, type: vmess, uuid: a3869db4-eaaa-4cef-b131-26b3c0b46686, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /huawei, headers: {Host: cloudflare.piaole.me}}, udp: true}
+  - {name: TELE_US 16, server: 107.167.30.132, port: 43900, type: vmess, uuid: 58e560b4-bba6-4843-be5f-83321022fa0d, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 17, server: wi.saintink.eu.org, port: 443, type: vmess, uuid: 927094d3-d678-4763-8591-e240d0bcae87, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /vuk2.0bad.com/chat, headers: {Host: sub2.saintink.eu.org}}, udp: true}
+  - {name: TELE_US 18, server: 66.241.124.229, port: 443, type: vmess, uuid: ea4909ef-7ca6-4b46-bf2e-6c07896ef338, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /ea4909ef-7ca6-4b46-bf2e-6c07896ef338-vm, headers: {Host: cold-dawn-9246.fly.dev}}, udp: true}
+  - {name: TELE_US 19, server: 1496join.outline-vpn.cloud, port: 44945, type: vmess, uuid: 268a491b-764c-44d1-81a4-30de16130867, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 20, server: 167.88.63.107, port: 8090, type: ss, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27, udp: true}
+  - {name: TELE_US 21, server: cloudflare.piaole.me, port: 443, type: vmess, uuid: 3d80e1ff-2e9f-498b-8e13-5230e67b2be9, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /huawei, headers: {Host: cloudflare.piaole.me}}, udp: true}
+  - {name: TELE_US 22, server: 51fly99.win, port: 443, type: vmess, uuid: 9681f99e-d251-477a-d777-1d01ee550481, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /myblog, headers: {Host: 51fly99.win}}, udp: true}
+  - {name: TELE_US 23, server: 137.175.0.155, port: 41551, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 24, server: 107.167.30.149, port: 43900, type: vmess, uuid: 58e560b4-bba6-4843-be5f-83321022fa0d, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 25, server: 108.166.203.183, port: 44945, type: vmess, uuid: 268a491b-764c-44d1-81a4-30de16130867, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 26, server: cloudflare.piaole.me, port: 443, type: vmess, uuid: 589612ae-ede2-494a-a0d4-6e4293040088, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /huawei, headers: {Host: cloudflare.piaole.me}}, udp: true}
+  - {name: TELE_US 27, server: 104.31.16.196, port: 443, type: vmess, uuid: 6abfe33a-1894-4f62-8879-83b71a35e5fd, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: us-1.acyun.tk}}, udp: true}
+  - {name: TELE_US 28, server: cloudflare.piaole.me, port: 443, type: vmess, uuid: fb3aef20-ef6d-44ea-8a5c-f38deab4424f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /huawei, headers: {Host: cloudflare.piaole.me}}, udp: true}
+  - {name: TELE_US 29, server: 23.108.100.101, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /footers, headers: {Host: www.40587333.xyz}}, udp: true}
 proxy-groups:
   - name: 🌐 节点选择
     type: select
@@ -114,25 +104,15 @@ proxy-groups:
     type: select
     proxies:
       - Pmsub_CN 0
-      - Pmsub_KR 1
-      - Pmsub_KR 10
-      - Pmsub_KR 11
-      - Pmsub_KR 12
-      - Pmsub_KR 13
-      - Pmsub_KR 14
-      - Pmsub_KR 15
-      - Pmsub_KR 16
+      - Pmsub_CN 1
       - Pmsub_KR 2
-      - Pmsub_KR 3
-      - Pmsub_KR 4
-      - Pmsub_KR 5
-      - Pmsub_KR 6
-      - Pmsub_KR 7
-      - Pmsub_KR 8
-      - Pmsub_KR 9
-      - Pmsub_SG 17
-      - Pmsub_US 18
-      - Pmsub_VN 19
+      - Pmsub_US 3
+      - Pmsub_US 4
+      - Pmsub_US 5
+      - Pmsub_US 6
+      - Pmsub_US 7
+      - Pmsub_VN 8
+      - Pmsub_VN 9
       - SCP_UKN 0
       - SCP_US 1
       - SCP_US 10
@@ -168,27 +148,27 @@ proxy-groups:
       - Speed_CN 9
       - Speed_DE 18
       - Speed_FR 19
-      - Speed_IT 20
-      - Speed_JP 21
+      - Speed_IM 20
+      - Speed_IT 21
       - Speed_JP 22
       - Speed_JP 23
-      - Speed_SE 24
-      - Speed_SG 25
+      - Speed_JP 24
+      - Speed_SE 25
       - Speed_US 26
       - Speed_US 27
       - Speed_US 28
       - Speed_US 29
       - TELE_CA 0
-      - TELE_JP 1
-      - TELE_JP 2
-      - TELE_JP 3
-      - TELE_KR 4
-      - TELE_RU 5
-      - TELE_SG 6
-      - TELE_SG 7
+      - TELE_CA 1
+      - TELE_FI 2
+      - TELE_IL 3
+      - TELE_JP 4
+      - TELE_KR 5
+      - TELE_NL 6
+      - TELE_RU 7
+      - TELE_SG 10
       - TELE_SG 8
       - TELE_SG 9
-      - TELE_US 10
       - TELE_US 11
       - TELE_US 12
       - TELE_US 13
@@ -245,12 +225,12 @@ proxy-groups:
       - Speed_CN 9
       - Speed_DE 18
       - Speed_FR 19
-      - Speed_IT 20
-      - Speed_JP 21
+      - Speed_IM 20
+      - Speed_IT 21
       - Speed_JP 22
       - Speed_JP 23
-      - Speed_SE 24
-      - Speed_SG 25
+      - Speed_JP 24
+      - Speed_SE 25
       - Speed_US 26
       - Speed_US 27
       - Speed_US 28
@@ -283,25 +263,15 @@ proxy-groups:
     tolerance: 100
     proxies:
       - Pmsub_CN 0
-      - Pmsub_KR 1
-      - Pmsub_KR 10
-      - Pmsub_KR 11
-      - Pmsub_KR 12
-      - Pmsub_KR 13
-      - Pmsub_KR 14
-      - Pmsub_KR 15
-      - Pmsub_KR 16
+      - Pmsub_CN 1
       - Pmsub_KR 2
-      - Pmsub_KR 3
-      - Pmsub_KR 4
-      - Pmsub_KR 5
-      - Pmsub_KR 6
-      - Pmsub_KR 7
-      - Pmsub_KR 8
-      - Pmsub_KR 9
-      - Pmsub_SG 17
-      - Pmsub_US 18
-      - Pmsub_VN 19
+      - Pmsub_US 3
+      - Pmsub_US 4
+      - Pmsub_US 5
+      - Pmsub_US 6
+      - Pmsub_US 7
+      - Pmsub_VN 8
+      - Pmsub_VN 9
   - name: Telegram
     type: url-test
     url: https://www.google.com/generate_204
@@ -309,16 +279,16 @@ proxy-groups:
     tolerance: 100
     proxies:
       - TELE_CA 0
-      - TELE_JP 1
-      - TELE_JP 2
-      - TELE_JP 3
-      - TELE_KR 4
-      - TELE_RU 5
-      - TELE_SG 6
-      - TELE_SG 7
+      - TELE_CA 1
+      - TELE_FI 2
+      - TELE_IL 3
+      - TELE_JP 4
+      - TELE_KR 5
+      - TELE_NL 6
+      - TELE_RU 7
+      - TELE_SG 10
       - TELE_SG 8
       - TELE_SG 9
-      - TELE_US 10
       - TELE_US 11
       - TELE_US 12
       - TELE_US 13
