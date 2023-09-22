@@ -5,26 +5,52 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: Pmsub_KR 0, server: 43.202.63.42, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Pmsub_TW 1, server: tw3.411api-snisajdnjkndd.com, port: 65401, type: trojan, password: fe4f9110-530b-49eb-a828-d4f4bcbd262c, sni: tw3.411api-snisajdnjkndd.com, skip-cert-verify: true, udp: true}
+  - {name: Pmsub_GB 0, server: vuk2.0bad.com, port: 443, type: vmess, uuid: 927094d3-d678-4763-8591-e240d0bcae87, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /chat, headers: {Host: vuk2.0bad.com}}, udp: true}
+  - {name: Pmsub_KR 1, server: 43.202.63.42, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
   - {name: SCP_UKN 0, server: 127.0.0.1, port: 443, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: SCP_US 1, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: buyvm3.ilovescp.com}}, udp: true}
-  - {name: SCP_US 10, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv2.scproxy.top}}, udp: true}
-  - {name: SCP_US 11, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl.sharecentrepro.com}}, udp: true}
-  - {name: SCP_US 2, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: fr.ilovescp.com}}, udp: true}
-  - {name: SCP_US 3, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: de.ilovescp.com}}, udp: true}
-  - {name: SCP_US 4, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: usgt.sharecentrepro.org}}, udp: true}
-  - {name: SCP_US 5, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: uk2.scproxy.top}}, udp: true}
-  - {name: SCP_US 6, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: buyvm5.ilovescp.com}}, udp: true}
-  - {name: SCP_US 7, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv3.sharecentrepro.org}}, udp: true}
-  - {name: SCP_US 8, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: ca.ilovescp.com}}, udp: true}
-  - {name: SCP_US 9, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv1.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 1, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: buyvm5.ilovescp.com}}, udp: true}
+  - {name: SCP_US 10, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv1.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 11, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: uk2.scproxy.top}}, udp: true}
+  - {name: SCP_US 2, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: usgt.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 3, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: buyvm3.ilovescp.com}}, udp: true}
+  - {name: SCP_US 4, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv3.sharecentrepro.org}}, udp: true}
+  - {name: SCP_US 5, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: ca.ilovescp.com}}, udp: true}
+  - {name: SCP_US 6, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: de.ilovescp.com}}, udp: true}
+  - {name: SCP_US 7, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: fr.ilovescp.com}}, udp: true}
+  - {name: SCP_US 8, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: lv2.scproxy.top}}, udp: true}
+  - {name: SCP_US 9, server: cf-lt.sharecentre.online, port: 80, type: vmess, uuid: 5f751c6e-50b1-4797-ba8e-6ffe324a0bce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /shirker, headers: {Host: nl.sharecentrepro.com}}, udp: true}
   - {name: Speed_FR 0, server: 51.15.25.187, port: 989, type: ss, cipher: aes-256-cfb, password: f8f7aCzcPKbsF8p3, udp: true}
   - {name: Speed_US 1, server: 137.175.0.155, port: 41522, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: TELE_DE 0, server: nl1.421421.xyz, port: 20230, type: trojan, password: 9323c75e-56bd-4dee-bd90-601e6f03d259, sni: 421421.xyz, skip-cert-verify: true, udp: true}
-  - {name: TELE_JP 1, server: jp5.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
-  - {name: TELE_JP 2, server: jp3.421421.xyz, port: 20230, type: trojan, password: 9323c75e-56bd-4dee-bd90-601e6f03d259, sni: 421421.xyz, skip-cert-verify: true, udp: true}
-  - {name: TELE_SG 3, server: sg2.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: TELE_DE 0, server: 5.104.107.143, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: de1.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_DE 1, server: nl1.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: TELE_FR 2, server: 13.39.69.23, port: 22222, type: trojan, password: telegram-id-privatevpns, sni: trj.rollingnext.co.uk, skip-cert-verify: true, udp: true}
+  - {name: TELE_GB 3, server: 3.9.20.223, port: 22222, type: trojan, password: telegram-id-privatevpns, sni: trj.rollingnext.co.uk, skip-cert-verify: true, udp: true}
+  - {name: TELE_GB 4, server: vuk2.0bad.com, port: 443, type: vmess, uuid: 927094d3-d678-4763-8591-e240d0bcae87, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /chat, headers: {Host: vuk2.0bad.com}}, udp: true}
+  - {name: TELE_HK 5, server: 42.3.66.67, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: downloadhk.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_HK 6, server: 199.15.77.128, port: 10001, type: vmess, uuid: a783230b-cd66-4492-9517-7f6cf569e1c9, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: "/vm?ed=2048", headers: {Host: do1.kxking.eu.org}}, udp: true}
+  - {name: TELE_HK 7, server: 199.15.77.128, port: 10001, type: vmess, uuid: a783230b-cd66-4492-9517-7f6cf569e1c9, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: "/vm?ed=2048", headers: {Host: dosg1.kxking.eu.org}}, udp: true}
+  - {name: TELE_JP 10, server: jp3.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: TELE_JP 11, server: 139.162.115.158, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: t.me/OutlineVpnOfficial, udp: true}
+  - {name: TELE_JP 12, server: hk1.downloadvip.cfd, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: download.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_JP 13, server: jp5.421421.xyz, port: 20230, type: trojan, password: 26af88d0-fc72-43b3-8108-521a7b12aa45, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: TELE_JP 8, server: www.outline.network.qoa75t01yqv1wprsjj5be4ibpj4s51izfw7hiztoqjjzb5r04cihrx2uatfb8ot.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: t.me/OutlineVpnOfficial, udp: true}
+  - {name: TELE_JP 9, server: jp1.downloadvip.cfd, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: download.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_SE 14, server: 13.50.177.35, port: 22222, type: trojan, password: telegram-id-directvpn, sni: trj.rollingnext.co.uk, skip-cert-verify: true, udp: true}
+  - {name: TELE_SG 15, server: sg4.421421.xyz, port: 20230, type: trojan, password: 9323c75e-56bd-4dee-bd90-601e6f03d259, sni: 421421.xyz, skip-cert-verify: true, udp: true}
+  - {name: TELE_SG 16, server: sg2.downloadvip.cfd, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: djsg1.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_SG 17, server: sg1.downloadvip.cfd, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: djsg1.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_TW 18, server: hinet1.downloadvip.cfd, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: download.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 19, server: 163.123.192.156, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: downloadus.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 20, server: 3.128.157.76, port: 22222, type: trojan, password: telegram-id-directvpn, sni: trj.rollingnext.co.uk, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 21, server: fd.shabijichang.com, port: 80, type: vmess, uuid: 53701585-591f-48a3-9515-8831ed0524ac, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: xn3.shabijichang.com}}, udp: true}
+  - {name: TELE_US 22, server: 163.123.192.153, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: downloadus.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 23, server: fd.shabijichang.com, port: 80, type: vmess, uuid: 5e48a497-f4ae-4129-afd6-ba26d75b792a, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: xn3.shabijichang.com}}, udp: true}
+  - {name: TELE_US 24, server: cdn.narutos.top, port: 8880, type: vmess, uuid: 4b5e4565-322f-4223-a891-78a84f189726, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /XQ2WCa29jfDM25GBcbnQ, headers: {Host: poland.yj2022.gq}}, udp: true}
+  - {name: TELE_US 25, server: vus2.0bad.com, port: 443, type: vmess, uuid: 927094d3-d678-4763-8591-e240d0bcae87, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /chat, headers: {Host: vus2.0bad.com}}, udp: true}
+  - {name: TELE_US 26, server: ahsorathiyaa.fly.dev, port: 443, type: vmess, uuid: de04add9-5c68-8bab-950c-08cd5320df18, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /vmess, headers: {Host: ahsorathiyaa.fly.dev}}, udp: true}
+  - {name: TELE_US 27, server: 163.123.192.154, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: downloadus.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
+  - {name: TELE_US 28, server: fd.shabijichang.com, port: 80, type: vmess, uuid: 53701585-591f-48a3-9515-8831ed0524ac, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: sdyg.shabijichang.com}}, udp: true}
+  - {name: TELE_US 29, server: 163.123.192.155, port: 443, type: trojan, password: 08900750-d084-4e2f-a3d6-ed4213a43678, sni: downloadus.xn--mes358a9urctx.com, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🌐 节点选择
     type: select
@@ -38,8 +64,8 @@ proxy-groups:
   - name: ✋ 手动选择
     type: select
     proxies:
-      - Pmsub_KR 0
-      - Pmsub_TW 1
+      - Pmsub_GB 0
+      - Pmsub_KR 1
       - SCP_UKN 0
       - SCP_US 1
       - SCP_US 10
@@ -55,9 +81,35 @@ proxy-groups:
       - Speed_FR 0
       - Speed_US 1
       - TELE_DE 0
-      - TELE_JP 1
-      - TELE_JP 2
-      - TELE_SG 3
+      - TELE_DE 1
+      - TELE_FR 2
+      - TELE_GB 3
+      - TELE_GB 4
+      - TELE_HK 5
+      - TELE_HK 6
+      - TELE_HK 7
+      - TELE_JP 10
+      - TELE_JP 11
+      - TELE_JP 12
+      - TELE_JP 13
+      - TELE_JP 8
+      - TELE_JP 9
+      - TELE_SE 14
+      - TELE_SG 15
+      - TELE_SG 16
+      - TELE_SG 17
+      - TELE_TW 18
+      - TELE_US 19
+      - TELE_US 20
+      - TELE_US 21
+      - TELE_US 22
+      - TELE_US 23
+      - TELE_US 24
+      - TELE_US 25
+      - TELE_US 26
+      - TELE_US 27
+      - TELE_US 28
+      - TELE_US 29
   - name: 💡 自动选择
     type: url-test
     url: https://www.google.com/generate_204
@@ -101,8 +153,8 @@ proxy-groups:
     interval: 300
     tolerance: 100
     proxies:
-      - Pmsub_KR 0
-      - Pmsub_TW 1
+      - Pmsub_GB 0
+      - Pmsub_KR 1
   - name: Telegram
     type: url-test
     url: https://www.google.com/generate_204
@@ -110,9 +162,35 @@ proxy-groups:
     tolerance: 100
     proxies:
       - TELE_DE 0
-      - TELE_JP 1
-      - TELE_JP 2
-      - TELE_SG 3
+      - TELE_DE 1
+      - TELE_FR 2
+      - TELE_GB 3
+      - TELE_GB 4
+      - TELE_HK 5
+      - TELE_HK 6
+      - TELE_HK 7
+      - TELE_JP 10
+      - TELE_JP 11
+      - TELE_JP 12
+      - TELE_JP 13
+      - TELE_JP 8
+      - TELE_JP 9
+      - TELE_SE 14
+      - TELE_SG 15
+      - TELE_SG 16
+      - TELE_SG 17
+      - TELE_TW 18
+      - TELE_US 19
+      - TELE_US 20
+      - TELE_US 21
+      - TELE_US 22
+      - TELE_US 23
+      - TELE_US 24
+      - TELE_US 25
+      - TELE_US 26
+      - TELE_US 27
+      - TELE_US 28
+      - TELE_US 29
   - name: 👉 国内网站
     type: select
     proxies:
