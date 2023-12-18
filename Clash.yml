@@ -31,11 +31,23 @@ proxies:
   - {name: SCP_TR 22, server: 193.46.56.210, port: 8443, type: vmess, uuid: 56354ec0-cadc-49e1-8144-8a1b20571b4f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true}
   - {name: SCP_UA 23, server: 193.238.153.14, port: 8443, type: vmess, uuid: 159693e0-5146-482d-9e46-8c4f2fc865b1, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true}
   - {name: SCP_US 24, server: 54.70.3.6, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Speed_KR 0, server: 43.201.55.242, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Speed_SG 1, server: 52.221.217.97, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Speed_SG 2, server: 54.151.131.43, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Speed_SG 3, server: 13.212.204.117, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: Speed_US 4, server: 54.70.3.6, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_BE 0, server: 37.120.236.251, port: 443, type: vmess, uuid: ed162daa-ee20-44ed-830f-b522c501387a, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /path/143013092425, headers: {Host: www.42088326.xyz}}, udp: true}
+  - {name: Speed_CN 1, server: 120.233.43.37, port: 52629, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Speed_IR 2, server: 81.12.27.7, port: 47575, type: vmess, uuid: b3c49b53-2d5d-4d13-d195-76d48aeccd11, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Speed_JP 3, server: 43.206.229.73, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_JP 4, server: 54.65.229.89, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_JP 5, server: 18.183.98.84, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_KR 10, server: 43.200.253.6, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_KR 11, server: 43.201.55.242, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_KR 6, server: 43.201.53.4, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_KR 7, server: 43.202.56.250, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_KR 8, server: 43.201.110.52, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_KR 9, server: 43.202.3.93, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_NL 12, server: 45.87.153.246, port: 6199, type: ss, cipher: chacha20-ietf-poly1305, password: f7EI0dGWQM42T8gwN9CZIj, udp: true}
+  - {name: Speed_SC 13, server: 45.133.247.249, port: 2086, type: vmess, uuid: 617c9bc4-4116-41c6-99e0-ace49a38fcdb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /Jnv8ViZOUVgijjOh0p5uGjHnXIiY, headers: {Host: fr1.tehme100.fun}}, udp: true}
+  - {name: Speed_SG 14, server: 52.221.217.97, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_US 15, server: 54.70.3.6, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: Speed_US 16, server: 104.17.129.28, port: 8080, type: vmess, uuid: 94242109-0930-427f-f899-15d34021130c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: eu2.openxai.link}}, udp: true}
   - {name: TELE_GB 0, server: 212.102.53.193, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
   - {name: TELE_GB 1, server: 212.102.53.81, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
   - {name: TELE_GB 2, server: 212.102.53.80, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
@@ -105,11 +117,23 @@ proxy-groups:
       - SCP_TR 22
       - SCP_UA 23
       - SCP_US 24
-      - Speed_KR 0
-      - Speed_SG 1
-      - Speed_SG 2
-      - Speed_SG 3
-      - Speed_US 4
+      - Speed_BE 0
+      - Speed_CN 1
+      - Speed_IR 2
+      - Speed_JP 3
+      - Speed_JP 4
+      - Speed_JP 5
+      - Speed_KR 10
+      - Speed_KR 11
+      - Speed_KR 6
+      - Speed_KR 7
+      - Speed_KR 8
+      - Speed_KR 9
+      - Speed_NL 12
+      - Speed_SC 13
+      - Speed_SG 14
+      - Speed_US 15
+      - Speed_US 16
       - TELE_GB 0
       - TELE_GB 1
       - TELE_GB 2
@@ -157,11 +181,23 @@ proxy-groups:
     interval: 300
     tolerance: 100
     proxies:
-      - Speed_KR 0
-      - Speed_SG 1
-      - Speed_SG 2
-      - Speed_SG 3
-      - Speed_US 4
+      - Speed_BE 0
+      - Speed_CN 1
+      - Speed_IR 2
+      - Speed_JP 3
+      - Speed_JP 4
+      - Speed_JP 5
+      - Speed_KR 10
+      - Speed_KR 11
+      - Speed_KR 6
+      - Speed_KR 7
+      - Speed_KR 8
+      - Speed_KR 9
+      - Speed_NL 12
+      - Speed_SC 13
+      - Speed_SG 14
+      - Speed_US 15
+      - Speed_US 16
   - name: SCP
     type: url-test
     url: https://www.google.com/generate_204
