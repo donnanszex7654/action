@@ -1,0 +1,2314 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "proxyDns",
+        "address": "8.8.8.8",
+        "detour": "select"
+      },
+      {
+        "tag": "localDns",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "ghproxy.com",
+          "cdn.jsdelivr.net",
+          "testingcf.jsdelivr.net"
+        ],
+        "server": "localDns"
+      },
+      {
+        "geosite": [
+          "category-ads-all"
+        ],
+        "server": "block"
+      },
+      {
+        "server": "localDns",
+        "outbound": "any",
+        "disable_cache": true
+      },
+      {
+        "geosite": [
+          "cn"
+        ],
+        "server": "localDns"
+      },
+      {
+        "server": "localDns",
+        "clash_mode": "direct"
+      },
+      {
+        "server": "proxyDns",
+        "clash_mode": "global"
+      },
+      {
+        "geosite": [
+          "geolocation-!cn"
+        ],
+        "server": "proxyDns"
+      }
+    ],
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "sniff": true,
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 1081
+    },
+    {
+      "stack": "system",
+      "auto_route": true,
+      "inet4_address": "172.19.0.1/30",
+      "mtu": 9000,
+      "sniff": true,
+      "strict_route": true,
+      "type": "tun",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 1081
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "select",
+      "type": "selector",
+      "outbounds": [
+        "auto",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "🤖 OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🌌 Google",
+      "type": "selector",
+      "outbounds": [
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "📟 Telegram",
+      "type": "selector",
+      "outbounds": [
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🐦 Twitter",
+      "type": "selector",
+      "outbounds": [
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "👤 Facebook",
+      "type": "selector",
+      "outbounds": [
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🛍️ Amazon",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🍎 Apple",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🧩 Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🎮 Game",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "📺 Bilibili",
+      "type": "selector",
+      "outbounds": [
+        "direct"
+      ]
+    },
+    {
+      "tag": "🎬 MediaVideo",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🌏 !cn",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "node_15_1",
+        "node_46_1",
+        "node_85_1",
+        "node_143_1",
+        "node_195_1",
+        "node_239_1",
+        "node_258_1",
+        "node_276_1",
+        "node_292_1",
+        "node_148_1",
+        "node_153_1",
+        "node_168_1",
+        "node_239_2",
+        "node_292_2",
+        "node_296_1",
+        "node_65_1",
+        "node_85_2",
+        "node_153_2",
+        "node_168_2",
+        "node_258_2",
+        "node_276_2",
+        "node_296_2",
+        "node_15_2",
+        "node_46_2",
+        "node_52_1",
+        "node_143_2",
+        "node_148_2",
+        "node_205_1",
+        "node_276_3",
+        "node_292_3",
+        "node_52_2",
+        "node_65_2",
+        "node_148_3",
+        "node_153_3",
+        "node_168_3",
+        "node_195_3",
+        "node_205_2",
+        "node_239_3",
+        "node_292_4",
+        "node_299",
+        "node_15_3",
+        "node_46_3",
+        "node_52_3",
+        "node_143_3",
+        "node_148_4",
+        "node_153_4",
+        "node_15_4",
+        "node_52_4",
+        "node_148_5",
+        "node_153_5",
+        "node_168_4",
+        "node_205_3",
+        "node_239_4",
+        "node_258_3",
+        "node_276_4",
+        "node_165_1",
+        "node_239_5",
+        "node_15_5",
+        "node_46_4",
+        "node_52_5",
+        "node_143_4",
+        "node_148_6",
+        "node_15_6",
+        "node_46_5",
+        "node_52_6",
+        "node_65_3",
+        "node_143_5",
+        "node_165_2",
+        "node_239_6",
+        "node_46_6",
+        "node_52_7",
+        "node_65_4",
+        "node_153_6",
+        "node_195_4",
+        "node_239_7",
+        "node_276_5"
+      ]
+    },
+    {
+      "tag": "🌏 cn",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "select"
+      ]
+    },
+    {
+      "tag": "🛑 AdBlock",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
+    },
+    {
+      "server": "46.51.132.223",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-directvpn",
+      "tag": "node_15_1",
+      "type": "trojan"
+    },
+    {
+      "server": "sg1.awslcn.info",
+      "server_port": 25246,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "93ec7261-1c92-4149-848a-26b6fb9fc4ce",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_46_1",
+      "type": "vmess"
+    },
+    {
+      "server": "X40.STAR-ONE.CFD",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "X40.STAR-ONE.CFD"
+      },
+      "transport": {
+        "path": "/41019/MEHDI",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "92555a6e-a5a0-418f-9c70-f1c20a9db275",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_85_1",
+      "type": "vmess"
+    },
+    {
+      "server": "vn.mjt000.com",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "vn.mjt000.com",
+        "insecure": true
+      },
+      "password": "26173d53-6557-492e-bf03-5fd5d034b5cf",
+      "tag": "node_143_1",
+      "type": "trojan"
+    },
+    {
+      "server": "de-new01.gujuji.top",
+      "server_port": 8080,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "befa6f3e-55e9-4ed9-bc53-f003c88bd8fe",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_195_1",
+      "type": "vmess"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 20295,
+      "tls": {
+        "enabled": true,
+        "server_name": "gy.58n.net",
+        "insecure": true
+      },
+      "password": "78e22819-a35f-342a-aa2c-6879d7f67268",
+      "tag": "node_239_1",
+      "type": "trojan"
+    },
+    {
+      "server": "dash.cloudsan.top",
+      "server_port": 2082,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "e2ffaa5e-2e94-4177-b172-5ab1680e3568",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_258_1",
+      "type": "vmess"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 22741,
+      "tls": {
+        "enabled": true,
+        "server_name": "gy.58n.net",
+        "insecure": true
+      },
+      "password": "52fa8ccc-68b6-3a2b-87bd-931d5ce3aedf",
+      "tag": "node_276_1",
+      "type": "trojan"
+    },
+    {
+      "server": "192.9.241.163",
+      "server_port": 55555,
+      "tls": {
+        "enabled": true,
+        "server_name": "sj.alieszvps.cf"
+      },
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "bb68b623-7f27-4da1-b068-4e5748ca29d6",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_292_1",
+      "type": "vmess"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 20139,
+      "tls": {
+        "enabled": true,
+        "server_name": "z139.hongkongnode.top",
+        "insecure": true
+      },
+      "password": "3b9cacd5-d235-3e4f-97be-ca5278132650",
+      "tag": "node_148_1",
+      "type": "trojan"
+    },
+    {
+      "server": "jp.takeshi.wiki",
+      "server_port": 80,
+      "transport": {
+        "path": "/takeshi.wiki",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "59517e0b-ae1c-41d3-9c44-c44cea6f7546",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_153_1",
+      "type": "vmess"
+    },
+    {
+      "server": "3.130.82.116",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-directvpn",
+      "tag": "node_168_1",
+      "type": "trojan"
+    },
+    {
+      "server": "52.56.225.114",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_239_2",
+      "type": "trojan"
+    },
+    {
+      "server": "uk.cooc.icu",
+      "server_port": 31511,
+      "password": "0eccfa50-f189-48d8-ad87-08eba62df389",
+      "method": "aes-128-gcm",
+      "tag": "node_292_2",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 21247,
+      "tls": {
+        "enabled": true,
+        "server_name": "gy.58n.net",
+        "insecure": true
+      },
+      "password": "ebe608c0-0280-3007-9b38-60b071b1b8ed",
+      "tag": "node_296_1",
+      "type": "trojan"
+    },
+    {
+      "server": "45.91.81.15",
+      "server_port": 59665,
+      "uuid": "2197b938-a904-42d1-cf22-e68d5ca23726",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_65_1",
+      "type": "vmess"
+    },
+    {
+      "server": "13.39.29.59",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_85_2",
+      "type": "trojan"
+    },
+    {
+      "server": "nl1.421421.xyz",
+      "server_port": 20230,
+      "tls": {
+        "enabled": true,
+        "server_name": "421421.xyz",
+        "insecure": true
+      },
+      "password": "3869cf51-5c65-4dac-a4ef-33e49b6ebb4b",
+      "tag": "node_153_2",
+      "type": "trojan"
+    },
+    {
+      "server": "no.09.ijg.cc",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "no.09.ijg.cc",
+        "insecure": true
+      },
+      "password": "j47juGmQIo",
+      "tag": "node_168_2",
+      "type": "trojan"
+    },
+    {
+      "server": "15.237.239.87",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_258_2",
+      "type": "trojan"
+    },
+    {
+      "server": "190.93.246.24",
+      "server_port": 2095,
+      "transport": {
+        "path": "/?ed=2048",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "VPNCUSTOMIZE",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_276_2",
+      "type": "vmess"
+    },
+    {
+      "server": "waynn.makeup",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "waynn.makeup"
+      },
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_296_2",
+      "type": "vmess"
+    },
+    {
+      "server": "103.67.197.195",
+      "server_port": 80,
+      "transport": {
+        "path": "/ongtrumdata.com",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "bfb9f927-eef3-4dfd-adbe-05bcc8279b41",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_15_2",
+      "type": "vmess"
+    },
+    {
+      "server": "ml2.shabijichang.com",
+      "server_port": 80,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "10ea3b2a-b615-45f1-b1b7-c62bafe8c80c",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_46_2",
+      "type": "vmess"
+    },
+    {
+      "server": "145.239.1.100",
+      "server_port": 7306,
+      "password": "FoOiGlkAA9yPEGP",
+      "method": "aes-256-gcm",
+      "tag": "node_52_1",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "188.42.145.11",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "k2us2.djjc.sbs",
+        "insecure": true
+      },
+      "password": "46d69a7e-9002-44a3-99c1-01c412f29726",
+      "tag": "node_143_2",
+      "type": "trojan"
+    },
+    {
+      "server": "unlk5.lvwf8n-hh8e-2300-nmoo-d2e9naobeacn.9d8f269f96b25232-759cbb36d6548597.kaufen",
+      "server_port": 25002,
+      "tls": {
+        "enabled": true,
+        "server_name": "ip3691376078.mobgslb.tbcache.com",
+        "insecure": true
+      },
+      "password": "cc287f24-c5a5-4ebc-a77a-bb95ff902445",
+      "tag": "node_148_2",
+      "type": "trojan"
+    },
+    {
+      "server": "47.57.232.119",
+      "server_port": 2119,
+      "password": "3B9vFTBSlp",
+      "method": "aes-256-gcm",
+      "tag": "node_205_1",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "3.70.109.91",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_276_3",
+      "type": "trojan"
+    },
+    {
+      "server": "172.233.188.166",
+      "server_port": 11397,
+      "uuid": "20e0d67d-f7aa-4bb1-daae-b7f217306bba",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_292_3",
+      "type": "vmess"
+    },
+    {
+      "server": "209.46.30.106",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "nl4.djjc.sbs",
+        "insecure": true
+      },
+      "password": "46d69a7e-9002-44a3-99c1-01c412f29726",
+      "tag": "node_52_2",
+      "type": "trojan"
+    },
+    {
+      "server": "52.47.188.207",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-directvpn",
+      "tag": "node_65_2",
+      "type": "trojan"
+    },
+    {
+      "server": "cm1.awslcn.info",
+      "server_port": 25233,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "93ec7261-1c92-4149-848a-26b6fb9fc4ce",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_148_3",
+      "type": "vmess"
+    },
+    {
+      "server": "nc.cm.go002.xyz",
+      "server_port": 19593,
+      "password": "dcbc1c7f-c323-4365-bd48-cf767f9081ce",
+      "method": "chacha20-ietf-poly1305",
+      "tag": "node_153_3",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "89.116.180.179",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "p6us4.pqjc.buzz",
+        "insecure": true
+      },
+      "password": "d2698cf9-c47e-455c-8384-12e642cbba15",
+      "tag": "node_168_3",
+      "type": "trojan"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 20294,
+      "tls": {
+        "enabled": true,
+        "server_name": "gy.58n.net",
+        "insecure": true
+      },
+      "password": "a2054baa-3ba0-3009-953d-615693393ad9",
+      "tag": "node_195_3",
+      "type": "trojan"
+    },
+    {
+      "server": "15.156.18.108",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-directvpn",
+      "tag": "node_205_2",
+      "type": "trojan"
+    },
+    {
+      "server": "5.78.101.54",
+      "server_port": 3389,
+      "uuid": "9c050a86-d612-48f1-ec32-e573df08a1b7",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_239_3",
+      "type": "vmess"
+    },
+    {
+      "server": "13.39.45.127",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_292_4",
+      "type": "trojan"
+    },
+    {
+      "server": "158.178.227.16",
+      "server_port": 30839,
+      "uuid": "19bf4866-54ce-4fc9-8903-db7e160c5b81",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_299",
+      "type": "vmess"
+    },
+    {
+      "server": "52.215.8.239",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_15_3",
+      "type": "trojan"
+    },
+    {
+      "server": "dnspsdhaitun.ncsuwei.top",
+      "server_port": 14110,
+      "transport": {
+        "path": "/12e884bf-1622-7ceb-3009-7d47fdfs2f9a5",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "d93779d9-797c-3e84-9a1d-f6689d470051",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_46_3",
+      "type": "vmess"
+    },
+    {
+      "server": "18.216.249.151",
+      "server_port": 46403,
+      "uuid": "28dc6b61-09d8-4c19-b655-233cfb535567",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_52_3",
+      "type": "vmess"
+    },
+    {
+      "server": "38.75.136.135",
+      "server_port": 8888,
+      "password": "Y6R9pAtvxxzmGC",
+      "method": "aes-256-gcm",
+      "tag": "node_143_3",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "shcm002.theyydsnode.top",
+      "server_port": 14490,
+      "password": "fb522e26-2b93-4764-893f-b1b4b21bcb24",
+      "method": "chacha20-ietf-poly1305",
+      "tag": "node_148_4",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "94.131.96.137",
+      "server_port": 2086,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "900fbb93-4dba-40c1-be96-9aef165a7c2e",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_153_4",
+      "type": "vmess"
+    },
+    {
+      "server": "38.91.102.30",
+      "server_port": 8888,
+      "password": "Y6R9pAtvxxzmGC",
+      "method": "aes-256-gcm",
+      "tag": "node_15_4",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 20059,
+      "tls": {
+        "enabled": true,
+        "server_name": "gy.58n.net",
+        "insecure": true
+      },
+      "password": "368df6b8-d9e4-3ae0-96eb-46c6e65a91bc",
+      "tag": "node_52_4",
+      "type": "trojan"
+    },
+    {
+      "server": "172.99.190.109",
+      "server_port": 443,
+      "tls": {
+        "enabled": true
+      },
+      "transport": {
+        "path": "linkvws",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_148_5",
+      "type": "vmess"
+    },
+    {
+      "server": "nb22.ntbq.dynu.net",
+      "server_port": 12002,
+      "uuid": "2358c269-178a-43c0-a208-c6cc52d398f9",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_153_5",
+      "type": "vmess"
+    },
+    {
+      "server": "de-v2ray.freevmess.com",
+      "server_port": 8442,
+      "uuid": "0ff3822e-885b-4293-ac74-7faa98989569",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_168_4",
+      "type": "vmess"
+    },
+    {
+      "server": "193.227.99.41",
+      "server_port": 2087,
+      "tls": {
+        "enabled": true
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "/"
+      },
+      "uuid": "08ec6a06-8c15-4069-a781-8c725a30b7e7",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_205_3",
+      "type": "vmess"
+    },
+    {
+      "server": "dl3.fanqiecloud.top",
+      "server_port": 2052,
+      "transport": {
+        "path": "/sssddd",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "42bf8d2f-2b84-4f71-b838-ba326ff30555",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_239_4",
+      "type": "vmess"
+    },
+    {
+      "server": "52.50.166.191",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-privatevpns",
+      "tag": "node_258_3",
+      "type": "trojan"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 20059,
+      "tls": {
+        "enabled": true,
+        "server_name": "x59.flybar.work",
+        "insecure": true
+      },
+      "password": "cd098f4e-42cd-38ba-a7c2-78bf3d23b51f",
+      "tag": "node_276_4",
+      "type": "trojan"
+    },
+    {
+      "server": "23.227.38.29",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "jus2.jsjc.sbs",
+        "insecure": true
+      },
+      "password": "3f23c1eb-ace4-49ec-a7f0-f591b006b95a",
+      "tag": "node_165_1",
+      "type": "trojan"
+    },
+    {
+      "server": "Holland.meberplus.site",
+      "server_port": 4000,
+      "uuid": "718daa77-ec1c-4c3a-b9ff-65e4cce4b483",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_239_5",
+      "type": "vmess"
+    },
+    {
+      "server": "91.107.251.44",
+      "server_port": 443,
+      "uuid": "d20e38ef-1a4d-4009-a00d-2f0d44e3c65a",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_15_5",
+      "type": "vmess"
+    },
+    {
+      "server": "172.233.188.166",
+      "server_port": 11397,
+      "uuid": "20e0d67d-f7aa-4bb1-daae-b7f217306bba",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_46_4",
+      "type": "vmess"
+    },
+    {
+      "server": "51.77.53.200",
+      "server_port": 9102,
+      "password": "e4FCWrgpkji3QY",
+      "method": "aes-256-gcm",
+      "tag": "node_52_5",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "scp.baiyunxray.top",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "scp.baiyunxray.top"
+      },
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "7d04b6ca-939a-4ac1-bec4-34706a9cc68f",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_143_4",
+      "type": "vmess"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 25238,
+      "tls": {
+        "enabled": true,
+        "server_name": "gy.58n.net",
+        "insecure": true
+      },
+      "password": "a2054baa-3ba0-3009-953d-615693393ad9",
+      "tag": "node_148_6",
+      "type": "trojan"
+    },
+    {
+      "server": "13.42.202.185",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-directvpn",
+      "tag": "node_15_6",
+      "type": "trojan"
+    },
+    {
+      "server": "23.247.130.248",
+      "server_port": 17057,
+      "uuid": "569a26ec-1a28-421d-df9a-e15aefc15531",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_46_5",
+      "type": "vmess"
+    },
+    {
+      "server": "gy.58n.net",
+      "server_port": 20278,
+      "tls": {
+        "enabled": true,
+        "server_name": "z278.hongkongnode.top",
+        "insecure": true
+      },
+      "password": "5ff7c2bc-34c0-36c4-b2d7-4a3d6715916b",
+      "tag": "node_52_6",
+      "type": "trojan"
+    },
+    {
+      "server": "31.171.153.181",
+      "server_port": 989,
+      "password": "f8f7aCzcPKbsF8p3",
+      "method": "aes-256-cfb",
+      "tag": "node_65_3",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "nc.cn1.go002.xyz",
+      "server_port": 19561,
+      "password": "dcbc1c7f-c323-4365-bd48-cf767f9081ce",
+      "method": "chacha20-ietf-poly1305",
+      "tag": "node_143_5",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "38.180.98.215",
+      "server_port": 8080,
+      "transport": {
+        "path": "/",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "773ac60d-36d7-45b5-c99e-a0e3903e2e3a",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_165_2",
+      "type": "vmess"
+    },
+    {
+      "server": "51.158.54.237",
+      "server_port": 443,
+      "password": "asdKkaskJKfnsa",
+      "method": "aes-256-cfb",
+      "tag": "node_239_6",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "172.233.188.166",
+      "server_port": 11397,
+      "uuid": "20e0d67d-f7aa-4bb1-daae-b7f217306bba",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_46_6",
+      "type": "vmess"
+    },
+    {
+      "server": "52.142.146.57",
+      "server_port": 50395,
+      "password": "zpgPBiYXEhOwgwpCTaoTui",
+      "method": "chacha20-ietf-poly1305",
+      "tag": "node_52_7",
+      "type": "shadowsocks"
+    },
+    {
+      "server": "cf-point5.handboy.top",
+      "server_port": 2086,
+      "transport": {
+        "path": "/asdas",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "22425357-dc2f-4001-afe2-7f56a7210fca",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_65_4",
+      "type": "vmess"
+    },
+    {
+      "server": "15.237.97.67",
+      "server_port": 22222,
+      "tls": {
+        "enabled": true,
+        "server_name": "trj.rollingnext.co.uk",
+        "insecure": true
+      },
+      "password": "telegram-id-directvpn",
+      "tag": "node_153_6",
+      "type": "trojan"
+    },
+    {
+      "server": "nb22.ntbq.dynu.net",
+      "server_port": 12002,
+      "uuid": "2358c269-178a-43c0-a208-c6cc52d398f9",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_195_4",
+      "type": "vmess"
+    },
+    {
+      "server": "92.223.118.15",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "m3hdio1.servehalflife.com"
+      },
+      "transport": {
+        "path": "/@FORWARDV2RAY",
+        "type": "ws",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "uuid": "56bb54b0-5cfc-4b35-bc81-0b300a08b46b",
+      "packet_encoding": "xudp",
+      "security": "auto",
+      "alter_id": 0,
+      "tag": "node_239_7",
+      "type": "vmess"
+    },
+    {
+      "server": "209.46.30.106",
+      "server_port": 443,
+      "tls": {
+        "enabled": true,
+        "server_name": "nl4.djjc.sbs",
+        "insecure": true
+      },
+      "password": "46d69a7e-9002-44a3-99c1-01c412f29726",
+      "tag": "node_276_5",
+      "type": "trojan"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "download_url": "https://github.com/soffchen/sing-geoip/releases/latest/download/geoip.db",
+      "download_detour": "select"
+    },
+    "geosite": {
+      "download_url": "https://github.com/soffchen/sing-geosite/releases/latest/download/geosite.db",
+      "download_detour": "select"
+    },
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "outbound": "block"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "select"
+      },
+      {
+        "domain": [
+          "v2rayse.com",
+          "cfmem.com",
+          "vpnse.org",
+          "cff.pw",
+          "tt.vg"
+        ],
+        "outbound": "select"
+      },
+      {
+        "domain": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "geosite": [
+          "openai"
+        ],
+        "outbound": "🤖 OpenAI"
+      },
+      {
+        "geosite": [
+          "google",
+          "github"
+        ],
+        "geoip": [
+          "google"
+        ],
+        "outbound": "🌌 Google"
+      },
+      {
+        "geosite": [
+          "telegram"
+        ],
+        "geoip": [
+          "telegram"
+        ],
+        "outbound": "📟 Telegram"
+      },
+      {
+        "geosite": [
+          "twitter"
+        ],
+        "geoip": [
+          "twitter"
+        ],
+        "outbound": "🐦 Twitter"
+      },
+      {
+        "geosite": [
+          "facebook",
+          "instagram"
+        ],
+        "geoip": [
+          "facebook"
+        ],
+        "outbound": "👤 Facebook"
+      },
+      {
+        "geosite": [
+          "amazon"
+        ],
+        "outbound": "🛍️ Amazon"
+      },
+      {
+        "geosite": [
+          "apple-cn",
+          "apple"
+        ],
+        "outbound": "🍎 Apple"
+      },
+      {
+        "geosite": [
+          "microsoft"
+        ],
+        "outbound": "🧩 Microsoft"
+      },
+      {
+        "geosite": [
+          "category-games"
+        ],
+        "outbound": "🎮 Game"
+      },
+      {
+        "geosite": [
+          "bilibili"
+        ],
+        "outbound": "📺 Bilibili"
+      },
+      {
+        "geosite": [
+          "tiktok",
+          "netflix",
+          "hbo",
+          "disney",
+          "primevideo"
+        ],
+        "geoip": [
+          "netflix"
+        ],
+        "outbound": "🎬 MediaVideo"
+      },
+      {
+        "geosite": [
+          "geolocation-!cn"
+        ],
+        "outbound": "🌏 !cn"
+      },
+      {
+        "geosite": [
+          "cn"
+        ],
+        "geoip": [
+          "private",
+          "cn"
+        ],
+        "outbound": "🌏 cn"
+      },
+      {
+        "geosite": [
+          "category-ads-all"
+        ],
+        "outbound": "🛑 AdBlock"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "select"
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "store_selected": true
+    }
+  }
+}
